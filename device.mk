@@ -76,6 +76,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     com.dsi.ant@1.0.vendor
 
+# Aosp BT
+TARGET_USE_QTI_BT_STACK := false
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
@@ -302,6 +305,9 @@ PRODUCT_PACKAGES += \
 # QTI
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor
+
+# QTI Components
+TARGET_COMMON_QTI_COMPONENTS := bt
 
 # Ramdisk
 PRODUCT_PACKAGES += \
