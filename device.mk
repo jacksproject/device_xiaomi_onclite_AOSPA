@@ -305,7 +305,9 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor
 
 # QTI Components
-TARGET_COMMON_QTI_COMPONENTS := bt
+TARGET_COMMON_QTI_COMPONENTS := \
+    bt \
+    usb
 
 # Ramdisk
 PRODUCT_PACKAGES += \
