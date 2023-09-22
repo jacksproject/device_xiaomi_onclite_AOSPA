@@ -202,7 +202,8 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    android.hidl.allocator@1.0.vendor
 
 # IMS
 PRODUCT_PACKAGES += \
