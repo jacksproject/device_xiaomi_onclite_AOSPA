@@ -339,6 +339,10 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+# Remove packages
+PRODUCT_COPY_FILES += \
+    RemovePackages
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
