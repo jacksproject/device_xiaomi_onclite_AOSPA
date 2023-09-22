@@ -25,6 +25,9 @@ persist.vendor.cne.feature=1
 persist.vendor.data.mode=concurrent
 ro.vendor.use_data_netmgrd=true
 
+# Disable Skia tracing
+debug.hwui.skia_atrace_enabled=false
+
 # Graphics
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=1
