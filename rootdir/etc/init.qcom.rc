@@ -210,6 +210,9 @@ on boot
     # Create hvdcp_opti directory
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
 
+    # QTI PowerHAL
+    chown system system /sys/kernel/hbtp/display_pwr
+
     #sensors log dir
     mkdir /data/vendor/sensors
     chown system system /data/vendor/sensors
