@@ -24,6 +24,7 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 # Boot animation resolution.
 TARGET_BOOT_ANIMATION_RES := 720
+TARGET_BOARD_PLATFORM := MSM8953
 
 BUILD_FINGERPRINT := "xiaomi/onc/onc:9/PKQ1.181021.001/V11.0.3.0.PFLMIXM:user/release-keys"
 

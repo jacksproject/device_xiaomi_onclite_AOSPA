@@ -37,6 +37,8 @@ TARGET_BOARD_SUFFIX := _64
 # Build broken
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 
 # AVB
 BOARD_AVB_ENABLE := true
@@ -60,9 +62,14 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 TARGET_KERNEL_VERSION := 4.9
 # Kernel - Build
-TARGET_KERNEL_CLANG_VERSION := r416183b
-TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/kernel/$(HOST_PREBUILT_TAG)/clang-$(TARGET_KERNEL_CLANG_VERSION)
-TARGET_KERNEL_LLVM_BINUTILS := false
+TARGET_KERNEL_CLANG_COMPILE := true
+KERNEL_CUSTOM_LLVM := true
+KERNEL_SD_LLVM_SUPPORT := false
+TARGET_KERNEL_CLANG_VERSION := proton
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-$(TARGET_KERNEL_VERSION)
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+      HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+#TARGET_KERNEL_LLVM_BINUTILS := false
 
 # ANT
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -135,11 +142,12 @@ TARGET_NO_RPC := true
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    vendor/aospa/target/config/aospa_vendor_framework_compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+       $(DEVICE_PATH)/device_framework_compatibility_matrix.xml \
+       vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_onclite
@@ -185,8 +193,8 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Treble
+PRODUCT_FULL_TREBLE_OVERRIDE := true
 BOARD_VNDK_VERSION := current
-PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # Vendor security patch level
 VENDOR_SECURITY_PATCH := 2021-02-01

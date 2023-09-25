@@ -15,7 +15,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="false">
+    <hal format="hidl" optional="false" >
         <name>android.hidl.allocator</name>
         <version>1.0</version>
         <interface>
@@ -60,70 +60,6 @@
         <version>1.0</version>
         <interface>
             <name>IKeystoreExt</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-<hal format="hidl" optional="true">
-        <name>android.hardware.audio</name>
-        <version>4.0</version>
-        <interface>
-            <name>IDevicesFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-<hal format="hidl" optional="true">
-        <name>android.hardware.audio</name>
-        <version>5.0</version>
-        <interface>
-            <name>IDevicesFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-<hal format="hidl" optional="true">
-        <name>android.hardware.audio</name>
-        <version>6.0</version>
-        <interface>
-            <name>IDevicesFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-<hal format="hidl" optional="true">
-        <name>android.hardware.audio</name>
-        <version>7.0</version>
-        <interface>
-            <name>IDevicesFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-<hal format="hidl" optional="true">
-        <name>android.hardware.audio.effect</name>
-        <version>4.0</version>
-        <interface>
-            <name>IEffectsFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-<hal format="hidl" optional="true">
-        <name>android.hardware.audio.effect</name>
-        <version>5.0</version>
-        <interface>
-            <name>IEffectsFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
- <hal format="hidl" optional="true">
-        <name>android.hardware.audio.effect</name>
-        <version>6.0</version>
-        <interface>
-            <name>IEffectsFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-<hal format="hidl" optional="true">
-        <name>android.hardware.audio.effect</name>
-        <version>7.0</version>
-        <interface>
-            <name>IEffectsFactory</name>
             <instance>default</instance>
         </interface>
     </hal>
